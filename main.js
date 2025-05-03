@@ -15,3 +15,15 @@ menuBtn?.addEventListener('click', () => {
 document.querySelectorAll('.nav-link').forEach(link =>
   link.addEventListener('click', () => menu.classList.remove('active'))
 );
+
+// — continue-shopping dynamic URL for PayPal forms — 
+function getContinueShoppingURL(form) {
+  form.shopping_url.value = window.location.href;
+}
+
+// attach to all your add‐to‐cart forms
+document.querySelectorAll('.paypal-addtocart').forEach(f => {
+  f.addEventListener('submit', ev => {
+    getContinueShoppingURL(ev.target);
+  });
+});

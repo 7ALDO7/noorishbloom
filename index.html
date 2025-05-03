@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Noorish &amp; Bloom</title>
 
-  <!-- Font Awesome for social icons -->
+  <!-- Font Awesome for icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -22,6 +22,20 @@
       <div class="logo">
         <a href="#home"><span class="logo-circle"></span> Noorish &amp; Bloom</a>
       </div>
+
+      <!-- View Cart button in the nav -->
+      <form target="_self"
+            action="https://www.paypal.com/cgi-bin/webscr"
+            method="post"
+            class="paypal-viewcart">
+        <input type="hidden" name="business" value="aeaintegralservices@gmail.com">
+        <input type="hidden" name="cmd"      value="_cart">
+        <input type="hidden" name="display"  value="1">
+        <button type="submit" title="View Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+      </form>
+
       <ul class="menu">
         <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
@@ -37,6 +51,7 @@
     <div class="effect-wrap">
       <div class="effect effect1"></div>
       <div class="effect effect2">
+        <!-- 28 dots -->
         <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
         <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
         <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
@@ -44,6 +59,7 @@
       </div>
       <div class="effect effect3"></div>
       <div class="effect effect4">
+        <!-- 8 lines -->
         <div></div><div></div><div></div><div></div>
         <div></div><div></div><div></div><div></div>
       </div>
@@ -56,7 +72,8 @@
           Nourish your hair with our dual-action formula, enriched with coconut oil,
           aloe vera, argan oil &amp; bamboo extract for soft, lustrous strands.
         </p>
-        <a href="#product" class="btn1">Shop Now</a>
+        <!-- Added nav-link so mobile menu closes on click -->
+        <a href="#product" class="btn1 nav-link">Shop Now</a>
       </div>
       <div class="home-image">
         <div class="img-box">
@@ -100,7 +117,8 @@
         <h2 class="subtitle">Shop by Formula</h2>
       </div>
       <div class="row">
-        <!-- ITEM #1 -->
+
+        <!-- ITEM #1: Hydrating -->
         <div class="product-item">
           <div class="product-item-inner">
             <div class="card-img">
@@ -108,16 +126,34 @@
             </div>
             <div class="card-name"><p>#1 Hydrating</p></div>
             <div class="card-prices">
+              <!-- Wishlist heart -->
               <a href="#" class="card-icon"><i class="fa-solid fa-heart"></i></a>
+              <!-- Price display -->
               <div>
                 <span class="card-price-before">$39.99</span>
                 <span class="card-price-now">$29.99</span>
               </div>
-              <a href="#" class="card-icon"><i class="fa-solid fa-cart-plus"></i></a>
+              <!-- PayPal Add to Cart -->
+              <form target="paypal"
+                    action="https://www.paypal.com/cgi-bin/webscr"
+                    method="post"
+                    class="paypal-addtocart">
+                <input type="hidden" name="business"      value="aeaintegralservices@gmail.com">
+                <input type="hidden" name="cmd"           value="_cart">
+                <input type="hidden" name="add"           value="1">
+                <input type="hidden" name="item_name"     value="#1 Hydrating Shampoo">
+                <input type="hidden" name="amount"        value="29.99">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="shopping_url"  value="https://noorishbloom.com/#product">
+                <button type="submit" title="Add #1 Hydrating to cart">
+                  <i class="fa-solid fa-cart-plus"></i>
+                </button>
+              </form>
             </div>
           </div>
         </div>
-        <!-- ITEM #5 -->
+
+        <!-- ITEM #5: Strengthening -->
         <div class="product-item">
           <div class="product-item-inner">
             <div class="card-img">
@@ -130,10 +166,25 @@
                 <span class="card-price-before">$44.99</span>
                 <span class="card-price-now">$34.99</span>
               </div>
-              <a href="#" class="card-icon"><i class="fa-solid fa-cart-plus"></i></a>
+              <form target="paypal"
+                    action="https://www.paypal.com/cgi-bin/webscr"
+                    method="post"
+                    class="paypal-addtocart">
+                <input type="hidden" name="business"      value="aeaintegralservices@gmail.com">
+                <input type="hidden" name="cmd"           value="_cart">
+                <input type="hidden" name="add"           value="1">
+                <input type="hidden" name="item_name"     value="#5 Strengthening Shampoo">
+                <input type="hidden" name="amount"        value="34.99">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="shopping_url"  value="https://noorishbloom.com/#product">
+                <button type="submit" title="Add #5 Strengthening to cart">
+                  <i class="fa-solid fa-cart-plus"></i>
+                </button>
+              </form>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -142,10 +193,10 @@
   <section class="social-section shadow3" id="contact">
     <div class="height450">
       <div class="section-title text-center">
-        <span class="badge badge-info">Connect</span>
+        <span class="badge badge-info">Don’t Forget</span>
         <h2>Visit Our Socials</h2>
         <span class="section-title-line"></span>
-        <p>We’d Love to Hear From You</p>
+        <p>We’d Love to Connect With You</p>
       </div>
       <div class="social-overlap process-scetion mt100">
         <div class="container">
@@ -153,13 +204,13 @@
             <div class="col-md-10">
               <div class="social-bar">
                 <div class="social-icons mb-3 iconpad text-center">
-                  <a href="https://facebook.com/yourpage" class="slider-nav-item" target="_blank">
+                  <a href="https://facebook.com/noorishbloom"   class="slider-nav-item" target="_blank">
                     <i class="fab fa-facebook"></i>
                   </a>
-                  <a href="https://instagram.com/yourhandle" class="slider-nav-item" target="_blank">
+                  <a href="https://instagram.com/noorishbloom" class="slider-nav-item" target="_blank">
                     <i class="fab fa-instagram"></i>
                   </a>
-                  <a href="https://twitter.com/yourhandle" class="slider-nav-item" target="_blank">
+                  <a href="https://twitter.com/noorishbloom"   class="slider-nav-item" target="_blank">
                     <i class="fab fa-twitter"></i>
                   </a>
                 </div>
@@ -167,15 +218,17 @@
             </div>
           </div>
         </div>
-      </div><!-- /.social-overlap -->
-    </div><!-- /.height450 -->
+      </div>
+    </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="section-padding">
     <div class="container row">
       <div class="left-col">
-        <div class="logo"><a href="#home"><span class="logo-circle"></span> Noorish &amp; Bloom</a></div>
+        <div class="logo">
+          <a href="#home"><span class="logo-circle"></span> Noorish &amp; Bloom</a>
+        </div>
         <p class="left-text">&copy; 2025 Noorish &amp; Bloom. All rights reserved.</p>
       </div>
       <div class="right-col">

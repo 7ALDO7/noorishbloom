@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You – Noorish & Bloom</title>
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <!-- Re-use your existing CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR (identical to your main pages) -->
+  <nav class="navbar">
+    <div class="container row justify-content-between align-items-center">
+      <div class="logo">
+        <a href="index.html"><span class="logo-circle"></span> Noorish &amp; Bloom</a>
+      </div>
+      <!-- View Cart button -->
+      <form target="_self"
+            action="https://www.paypal.com/cgi-bin/webscr"
+            method="post"
+            class="paypal-viewcart">
+        <input type="hidden" name="business" value="YOUR-LIVE-BUSINESS@EMAIL.COM">
+        <input type="hidden" name="cmd" value="_cart">
+        <input type="hidden" name="display" value="1">
+        <button type="submit" title="View Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+      </form>
+      <ul class="menu">
+        <li class="nav-item"><a href="index.html#home" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="index.html#product" class="nav-link">Products</a></li>
+        <li class="nav-item"><a href="index.html#contact" class="nav-link">Connect</a></li>
+      </ul>
+      <div class="menu-btn"><i class="fa-solid fa-bars"></i></div>
+    </div>
+  </nav>
+
+  <!-- THANK YOU SECTION -->
+  <section class="section-padding" style="padding-top:8rem; text-align:center;">
+    <div class="container">
+      <i class="fa-solid fa-check-circle" style="font-size:4rem; color:var(--main-color); margin-bottom:1rem;"></i>
+      <h1>Thank you for your purchase!</h1>
+      <p>Your order <strong id="order-id">#12345</strong> has been received.</p>
+      <p>We’re processing your order now and will send you a confirmation email shortly.</p>
+
+      <div style="margin:2rem 0;">
+        <a href="index.html#product" class="btn1">Continue Shopping</a>
+        <a href="index.html" class="btn1" style="margin-left:1rem;">Go to Home</a>
+      </div>
+
+      <p>If you’d like to review your cart or check out additional items, you can:</p>
+      <form target="_self"
+            action="https://www.paypal.com/cgi-bin/webscr"
+            method="post"
+            style="display:inline-block; margin-top:1rem;">
+        <input type="hidden" name="business" value="YOUR-LIVE-BUSINESS@EMAIL.COM">
+        <input type="hidden" name="cmd" value="_cart">
+        <input type="hidden" name="display" value="1">
+        <button type="submit" class="btn1">
+          <i class="fa-solid fa-cart-shopping"></i> View Your Cart
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER (same as your main pages) -->
+  <footer class="section-padding">
+    <div class="container row">
+      <div class="left-col">
+        <div class="logo"><a href="index.html"><span class="logo-circle"></span> Noorish &amp; Bloom</a></div>
+        <p class="left-text">&copy; 2025 Noorish &amp; Bloom. All rights reserved.</p>
+      </div>
+      <div class="right-col">
+        <h1>Join Our Newsletter</h1>
+        <div class="border"></div>
+        <p>Get exclusive offers &amp; haircare tips</p>
+        <form class="newsletter-form">
+          <input type="email" class="txtb" placeholder="Enter your email" required/>
+          <input type="submit" value="Subscribe" class="btn1"/>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <!-- your existing main.js for navbar + animations -->
+  <script src="main.js"></script>
+
+  <script>
+    // Grab the order number from the URL (?order=12345) if you pass it
+    const params = new URLSearchParams(window.location.search);
+    const orderId = params.get('order') || '';
+    if(orderId) {
+      document.getElementById('order-id').textContent = '#' + orderId;
+    }
+  </script>
+</body>
+</html>

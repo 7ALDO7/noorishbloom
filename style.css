@@ -487,20 +487,6 @@ a.btn1.nav-link:hover {
   background: rgba(255, 255, 255, 0.78);
 }
 
-.value-card span {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  margin-bottom: 18px;
-  color: white;
-  background: var(--green);
-  border-radius: 50%;
-  font-family: var(--serif);
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-
 .value-card h2 {
   font-size: 2rem;
 }
@@ -620,17 +606,22 @@ a.btn1.nav-link:hover {
 }
 
 .product-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 2rem;
-  justify-content: center;
+  align-items: stretch;
 }
 
 .product-item {
-  flex: 1;
-  max-width: 340px;
+  width: 100%;
+  max-width: none;
 }
 
 .product-item-inner {
+  height: 100%;
   min-height: 100%;
+  display: flex;
+  flex-direction: column;
   padding: 1.2rem;
   background: rgba(255, 255, 255, 0.86);
   border: 1px solid rgba(36, 72, 22, 0.12);
@@ -645,12 +636,10 @@ a.btn1.nav-link:hover {
   box-shadow: var(--shadow);
 }
 
-.featured-card {
-  transform: translateY(-18px);
-}
-
 .card-img {
   height: 280px;
+  display: grid;
+  place-items: center;
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 24px;
@@ -663,7 +652,15 @@ a.btn1.nav-link:hover {
   object-fit: contain;
 }
 
+.card-name {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .card-name p {
+  margin: 0;
   color: var(--green);
   font-family: var(--serif);
   font-size: 1.75rem;
@@ -672,7 +669,8 @@ a.btn1.nav-link:hover {
 }
 
 .card-desc {
-  min-height: 72px;
+  flex: 1;
+  min-height: 96px;
   margin: 1rem 0;
   color: rgba(23, 32, 21, 0.68);
   font-size: 0.95rem;
@@ -684,7 +682,7 @@ a.btn1.nav-link:hover {
   justify-content: space-between;
   align-items: center;
   gap: 0.75rem;
-  margin-top: 1rem;
+  margin-top: auto;
 }
 
 .card-price-before {
@@ -725,32 +723,18 @@ a.btn1.nav-link:hover {
     rgba(255, 255, 255, 0.9);
 }
 
-.oil-card-img {
-  display: grid;
-  place-items: center;
+.oil-card-img,
+.product-oil-photo {
   background:
-    radial-gradient(circle at 50% 40%, rgba(184, 154, 81, 0.22), transparent 14rem),
-    linear-gradient(145deg, #17350d, var(--green));
+    radial-gradient(circle at 50% 35%, rgba(184, 154, 81, 0.24), transparent 14rem),
+    linear-gradient(145deg, rgba(251, 248, 239, 0.8), rgba(184, 154, 81, 0.14));
 }
 
-/* OIL VISUAL */
-.oil-bottle {
-  display: grid;
-  place-items: center;
-}
-
-.oil-drop-large {
-  width: 145px;
-  height: 200px;
-  border: 4px solid rgba(255, 255, 255, 0.58);
-  border-radius: 62% 38% 56% 44% / 70% 42% 58% 30%;
-  transform: rotate(45deg);
-  background: radial-gradient(
-    circle at 40% 40%,
-    rgba(255, 255, 255, 0.45),
-    rgba(184, 154, 81, 0.58) 44%,
-    rgba(184, 154, 81, 0.12)
-  );
+.product-oil-photo img {
+  width: 100%;
+  height: 100%;
+  max-height: 270px;
+  object-fit: contain;
 }
 
 /* RITUAL */
@@ -842,6 +826,18 @@ a.btn1.nav-link:hover {
   object-fit: contain;
 }
 
+.oil-ritual-photo {
+  background:
+    radial-gradient(circle at 50% 35%, rgba(184, 154, 81, 0.24), transparent 14rem),
+    linear-gradient(145deg, rgba(251, 248, 239, 0.8), rgba(184, 154, 81, 0.14));
+}
+
+.oil-ritual-photo img {
+  width: 100%;
+  max-height: 330px;
+  object-fit: contain;
+}
+
 .ritual-product-copy span {
   display: inline-block;
   margin-bottom: 10px;
@@ -877,12 +873,6 @@ a.btn1.nav-link:hover {
   color: var(--green);
   font-weight: 900;
   margin-right: 0.5rem;
-}
-
-.oil-visual {
-  background:
-    radial-gradient(circle at 50% 40%, rgba(184, 154, 81, 0.22), transparent 14rem),
-    linear-gradient(145deg, #17350d, var(--green));
 }
 
 /* SOCIAL */
@@ -1010,6 +1000,12 @@ footer {
 }
 
 /* RESPONSIVE */
+@media (max-width: 1100px) {
+  .product-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 1060px) {
   .menu-btn {
     display: block;
@@ -1069,10 +1065,6 @@ footer {
 
   .about-img {
     margin-bottom: 3rem;
-  }
-
-  .featured-card {
-    transform: none;
   }
 
   .left-col,
@@ -1153,9 +1145,16 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .product-item {
-    max-width: 100%;
-    flex: 100%;
+  .product-row {
+    grid-template-columns: 1fr;
+  }
+
+  .card-name {
+    min-height: auto;
+  }
+
+  .card-desc {
+    min-height: auto;
   }
 
   .ritual-product-grid {

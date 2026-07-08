@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Noorish &amp; Bloom</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Noorish &amp; Bloom | Botanical Hair Care</title>
+
+  <meta
+    name="description"
+    content="Noorish & Bloom botanical shampoo, conditioner, and nourishing hair care products infused with rosemary, cinnamon, cloves, and anise."
+  />
 
   <!-- Font Awesome for icons -->
   <link
@@ -11,105 +17,143 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   />
 
-  <!-- your site CSS -->
+  <!-- Site CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container row justify-content-between align-items-center">
       <div class="logo">
-        <a href="#home"><span class="logo-circle"></span> Noorish &amp; Bloom</a>
+        <a href="#home" class="nav-link">
+          <span class="logo-circle"></span>
+          Noorish &amp; Bloom
+        </a>
       </div>
 
+      <ul class="menu">
+        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link">Promise</a></li>
+        <li class="nav-item"><a href="#product" class="nav-link">Products</a></li>
+        <li class="nav-item"><a href="#ritual" class="nav-link">Ritual</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Connect</a></li>
+      </ul>
+
       <!-- View Cart button in the nav -->
-      <form target="_self"
-            action="https://www.paypal.com/cgi-bin/webscr"
-            method="post"
-            class="paypal-viewcart">
+      <form
+        target="_self"
+        action="https://www.paypal.com/cgi-bin/webscr"
+        method="post"
+        class="paypal-viewcart"
+      >
         <input type="hidden" name="business" value="aeaintegralservices@gmail.com">
-        <input type="hidden" name="cmd"      value="_cart">
-        <input type="hidden" name="display"  value="1">
-        <button type="submit" title="View Cart">
+        <input type="hidden" name="cmd" value="_cart">
+        <input type="hidden" name="display" value="1">
+        <button type="submit" title="View Cart" aria-label="View PayPal cart">
           <i class="fa-solid fa-cart-shopping"></i>
         </button>
       </form>
 
-      <ul class="menu">
-        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#product" class="nav-link">Products</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link">Connect</a></li>
-      </ul>
-      <div class="menu-btn"><i class="fa-solid fa-bars"></i></div>
+      <div class="menu-btn" aria-label="Open navigation menu">
+        <i class="fa-solid fa-bars"></i>
+      </div>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="home-section" id="home">
-    <div class="effect-wrap">
-      <div class="effect effect1"></div>
-      <div class="effect effect2">
-        <!-- 28 dots -->
-        <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-        <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-        <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-        <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-      </div>
-      <div class="effect effect3"></div>
-      <div class="effect effect4">
-        <!-- 8 lines -->
-        <div></div><div></div><div></div><div></div>
-        <div></div><div></div><div></div><div></div>
-      </div>
-    </div>
+    <div class="hero-orb hero-orb-one"></div>
+    <div class="hero-orb hero-orb-two"></div>
 
     <div class="container row full-screen align-items-center">
-      <div class="home-text">
-        <h2>Hydrating &amp;<br/><span>Strengthening</span><br/>Shampoo</h2>
+      <div class="home-text reveal">
+        <p class="eyebrow">Natural Botanical Hair Care</p>
+
+        <h1>Nourish your roots. Bloom through every strand.</h1>
+
         <p>
-          Nourish your hair with our dual-action formula, enriched with coconut oil,
-          aloe vera, argan oil &amp; bamboo extract for soft, lustrous strands.
+          Hydrating and strengthening hair care infused with rosemary, cinnamon,
+          cloves, and anise for a clean botanical routine from scalp to ends.
         </p>
-        <a href="#product" class="btn1 nav-link">Shop Now</a>
-      </div>
-      <div class="home-image">
-        <div class="img-box img-frame">
-          <img src="assets/images/Bundle.png" alt="Nourishing Bundle">
+
+        <div class="hero-buttons">
+          <a href="#product" class="btn1 nav-link">Shop Now</a>
+          <a href="#about" class="btn2 nav-link">Our Promise</a>
+        </div>
+
+        <div class="trust-row">
+          <span>Cruelty Free</span>
+          <span>No Dyes &amp; Parabens</span>
+          <span>No Phthalates</span>
         </div>
       </div>
+
+      <div class="home-image reveal">
+        <div class="img-box hero-product-card">
+          <img src="assets/images/Bundle.png" alt="Noorish & Bloom Nourishing Bundle">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values-section">
+    <div class="container values-grid">
+      <article class="value-card reveal">
+        <span>01</span>
+        <h2>Botanical Infusions</h2>
+        <p>Rosemary, cinnamon, cloves, and anise inspired blends for a refreshing hair-care ritual.</p>
+      </article>
+
+      <article class="value-card reveal">
+        <span>02</span>
+        <h2>Clean Beauty Feel</h2>
+        <p>Simple product values with no dyes, no parabens, no phthalates, and cruelty-free care.</p>
+      </article>
+
+      <article class="value-card reveal">
+        <span>03</span>
+        <h2>Scalp-to-Strand Care</h2>
+        <p>A complete routine made to cleanse, condition, nourish, and support healthier-looking hair.</p>
+      </article>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section class="about-section section-padding" id="about">
     <div class="container row justify-content-between align-items-center">
-      <div class="about-img">
-        <div class="img-box img-frame">
-          <img src="assets/images/strengthening.png" alt="Strengthening Shampoo">
+      <div class="about-img reveal">
+        <div class="img-box product-frame">
+          <img src="assets/images/strengthening.png" alt="Noorish & Bloom Strengthening Shampoo">
         </div>
       </div>
-      <div class="about-text">
-        <div class="section-title">
-          <h1 class="title">Our Promise</h1>
-          <h2 class="subtitle">Good. Clean. Natural.</h2>
+
+      <div class="about-text reveal">
+        <div class="section-title left-title">
+          <p class="eyebrow">Our Promise</p>
+          <h2>Good. Clean. Natural.</h2>
         </div>
+
         <p>
           At Noorish &amp; Bloom, clean haircare means simple, transparent ingredients that
-          actually work. We start with a gentle, coconut-derived cleansing base enriched
-          with aloe vera, argan oil &amp; bamboo extract—then infuse each small batch
-          with four powerhouse botanicals:
+          are made to support a gentle, nourishing routine. We start with a coconut-derived
+          cleansing base enriched with aloe vera, argan oil, and bamboo extract, then infuse
+          each small batch with four powerhouse botanicals.
         </p>
+
         <ul class="promise-list">
-          <li>🌿 100% Vegan &amp; Cruelty-Free</li>
-          <li>❌ Free from Sulfates, Parabens, Phthalates &amp; Dyes</li>
-          <li>♻️ Ethically &amp; Sustainably Sourced</li>
-          <li>✨ Infused with Rosemary, Cinnamon, Cloves &amp; Anise</li>
+          <li><i class="fa-solid fa-leaf"></i> 100% Vegan &amp; Cruelty-Free</li>
+          <li><i class="fa-solid fa-ban"></i> Free from Sulfates, Parabens, Phthalates &amp; Dyes</li>
+          <li><i class="fa-solid fa-recycle"></i> Ethically &amp; Sustainably Sourced</li>
+          <li><i class="fa-solid fa-seedling"></i> Infused with Rosemary, Cinnamon, Cloves &amp; Anise</li>
         </ul>
-        <p>No compromises—just healthy, hydrated, naturally nourished hair.</p>
+
+        <p>No compromises. Just clean, hydrated, naturally nourished hair.</p>
+
         <div class="price">
-          <h3 class="title">Starting At</h3>
+          <h3>Starting At</h3>
           <span class="old-price">$29.99</span>
           <span class="new-price">$19.99</span>
         </div>
@@ -120,37 +164,56 @@
   <!-- PRODUCTS -->
   <section class="product-items section-padding" id="product">
     <div class="container">
-      <div class="section-title">
-        <h1 class="title">Our Collection</h1>
-        <h2 class="subtitle">Shop by Formula</h2>
+      <div class="section-title text-center reveal">
+        <p class="eyebrow">The Collection</p>
+        <h2>Shop by Formula</h2>
+        <p class="section-intro">
+          Start with a botanical cleanse, follow with conditioning softness,
+          or choose the nourishing duo bundle.
+        </p>
       </div>
-      <div class="row">
+
+      <div class="row product-row">
 
         <!-- ITEM #1: Nourishing Shampoo -->
-        <div class="product-item">
+        <div class="product-item reveal">
           <div class="product-item-inner">
             <div class="card-img">
-              <img src="assets/images/Shampoo.png" alt="Nourishing Shampoo">
+              <img src="assets/images/Shampoo.png" alt="Noorish & Bloom Nourishing Shampoo">
             </div>
-            <div class="card-name"><p>#1 Nourishing Shampoo</p></div>
+
+            <div class="card-name">
+              <p>#1 Nourishing Shampoo</p>
+            </div>
+
+            <p class="card-desc">
+              Infused with rosemary, cinnamon, cloves, and anise for a fresh botanical cleanse.
+            </p>
+
             <div class="card-prices">
-              <a href="#" class="card-icon"><i class="fa-solid fa-heart"></i></a>
+              <a href="#product" class="card-icon" aria-label="Favorite shampoo">
+                <i class="fa-solid fa-heart"></i>
+              </a>
+
               <div>
                 <span class="card-price-before">$29.99</span>
                 <span class="card-price-now">$19.99</span>
               </div>
-              <form target="paypal"
-                    action="https://www.paypal.com/cgi-bin/webscr"
-                    method="post"
-                    class="paypal-addtocart">
-                <input type="hidden" name="business"      value="aeaintegralservices@gmail.com">
-                <input type="hidden" name="cmd"           value="_cart">
-                <input type="hidden" name="add"           value="1">
-                <input type="hidden" name="item_name"     value="#1 Nourishing Shampoo">
-                <input type="hidden" name="amount"        value="19.99">
+
+              <form
+                target="paypal"
+                action="https://www.paypal.com/cgi-bin/webscr"
+                method="post"
+                class="paypal-addtocart"
+              >
+                <input type="hidden" name="business" value="aeaintegralservices@gmail.com">
+                <input type="hidden" name="cmd" value="_cart">
+                <input type="hidden" name="add" value="1">
+                <input type="hidden" name="item_name" value="#1 Nourishing Shampoo">
+                <input type="hidden" name="amount" value="19.99">
                 <input type="hidden" name="currency_code" value="USD">
-                <input type="hidden" name="shopping_url"  value="https://noorishbloom.com/#product">
-                <button type="submit" title="Add #1 Nourishing Shampoo to cart">
+                <input type="hidden" name="shopping_url" value="https://noorishbloom.com/#product">
+                <button type="submit" title="Add #1 Nourishing Shampoo to cart" aria-label="Add Nourishing Shampoo to cart">
                   <i class="fa-solid fa-cart-plus"></i>
                 </button>
               </form>
@@ -159,30 +222,44 @@
         </div>
 
         <!-- ITEM #2: Nourishing Conditioner -->
-        <div class="product-item">
-          <div class="product-item-inner">
+        <div class="product-item reveal">
+          <div class="product-item-inner featured-card">
             <div class="card-img">
-              <img src="assets/images/Conditioner.png" alt="Nourishing Conditioner">
+              <img src="assets/images/Conditioner.png" alt="Noorish & Bloom Nourishing Conditioner">
             </div>
-            <div class="card-name"><p>#2 Nourishing Conditioner</p></div>
+
+            <div class="card-name">
+              <p>#2 Nourishing Conditioner</p>
+            </div>
+
+            <p class="card-desc">
+              Made to soften, smooth, and help hair feel more manageable after every wash.
+            </p>
+
             <div class="card-prices">
-              <a href="#" class="card-icon"><i class="fa-solid fa-heart"></i></a>
+              <a href="#product" class="card-icon" aria-label="Favorite conditioner">
+                <i class="fa-solid fa-heart"></i>
+              </a>
+
               <div>
                 <span class="card-price-before">$29.99</span>
                 <span class="card-price-now">$19.99</span>
               </div>
-              <form target="paypal"
-                    action="https://www.paypal.com/cgi-bin/webscr"
-                    method="post"
-                    class="paypal-addtocart">
-                <input type="hidden" name="business"      value="aeaintegralservices@gmail.com">
-                <input type="hidden" name="cmd"           value="_cart">
-                <input type="hidden" name="add"           value="1">
-                <input type="hidden" name="item_name"     value="#2 Nourishing Conditioner">
-                <input type="hidden" name="amount"        value="19.99">
+
+              <form
+                target="paypal"
+                action="https://www.paypal.com/cgi-bin/webscr"
+                method="post"
+                class="paypal-addtocart"
+              >
+                <input type="hidden" name="business" value="aeaintegralservices@gmail.com">
+                <input type="hidden" name="cmd" value="_cart">
+                <input type="hidden" name="add" value="1">
+                <input type="hidden" name="item_name" value="#2 Nourishing Conditioner">
+                <input type="hidden" name="amount" value="19.99">
                 <input type="hidden" name="currency_code" value="USD">
-                <input type="hidden" name="shopping_url"  value="https://noorishbloom.com/#product">
-                <button type="submit" title="Add #2 Nourishing Conditioner to cart">
+                <input type="hidden" name="shopping_url" value="https://noorishbloom.com/#product">
+                <button type="submit" title="Add #2 Nourishing Conditioner to cart" aria-label="Add Nourishing Conditioner to cart">
                   <i class="fa-solid fa-cart-plus"></i>
                 </button>
               </form>
@@ -191,30 +268,44 @@
         </div>
 
         <!-- BUNDLE: Shampoo + Conditioner -->
-        <div class="product-item">
+        <div class="product-item reveal">
           <div class="product-item-inner">
             <div class="card-img">
-              <img src="assets/images/Bundle.png" alt="Shampoo &amp; Conditioner Bundle">
+              <img src="assets/images/Bundle.png" alt="Noorish & Bloom Shampoo and Conditioner Bundle">
             </div>
-            <div class="card-name"><p>#3 Nourishing Duo Bundle</p></div>
+
+            <div class="card-name">
+              <p>#3 Nourishing Duo Bundle</p>
+            </div>
+
+            <p class="card-desc">
+              The complete wash-day pair for cleansing, conditioning, softness, and shine.
+            </p>
+
             <div class="card-prices">
-              <a href="#" class="card-icon"><i class="fa-solid fa-heart"></i></a>
+              <a href="#product" class="card-icon" aria-label="Favorite bundle">
+                <i class="fa-solid fa-heart"></i>
+              </a>
+
               <div>
                 <span class="card-price-before">$39.98</span>
                 <span class="card-price-now">$29.99</span>
               </div>
-              <form target="paypal"
-                    action="https://www.paypal.com/cgi-bin/webscr"
-                    method="post"
-                    class="paypal-addtocart">
-                <input type="hidden" name="business"      value="aeaintegralservices@gmail.com">
-                <input type="hidden" name="cmd"           value="_cart">
-                <input type="hidden" name="add"           value="1">
-                <input type="hidden" name="item_name"     value="#3 Nourishing Duo Bundle">
-                <input type="hidden" name="amount"        value="29.99">
+
+              <form
+                target="paypal"
+                action="https://www.paypal.com/cgi-bin/webscr"
+                method="post"
+                class="paypal-addtocart"
+              >
+                <input type="hidden" name="business" value="aeaintegralservices@gmail.com">
+                <input type="hidden" name="cmd" value="_cart">
+                <input type="hidden" name="add" value="1">
+                <input type="hidden" name="item_name" value="#3 Nourishing Duo Bundle">
+                <input type="hidden" name="amount" value="29.99">
                 <input type="hidden" name="currency_code" value="USD">
-                <input type="hidden" name="shopping_url"  value="https://noorishbloom.com/#product">
-                <button type="submit" title="Add Nourishing Duo Bundle to cart">
+                <input type="hidden" name="shopping_url" value="https://noorishbloom.com/#product">
+                <button type="submit" title="Add Nourishing Duo Bundle to cart" aria-label="Add Nourishing Duo Bundle to cart">
                   <i class="fa-solid fa-cart-plus"></i>
                 </button>
               </form>
@@ -226,21 +317,58 @@
     </div>
   </section>
 
+  <!-- RITUAL -->
+  <section class="ritual-section section-padding" id="ritual">
+    <div class="container">
+      <div class="ritual-card reveal">
+        <p class="eyebrow">The Ritual</p>
+        <h2>Cleanse. Condition. Bloom.</h2>
+
+        <div class="ritual-grid">
+          <article>
+            <span>01</span>
+            <h3>Cleanse</h3>
+            <p>Apply shampoo to wet hair, gently massage the scalp, and rinse thoroughly.</p>
+          </article>
+
+          <article>
+            <span>02</span>
+            <h3>Condition</h3>
+            <p>Apply conditioner from mid-lengths to ends, allow it to soften, then rinse.</p>
+          </article>
+
+          <article>
+            <span>03</span>
+            <h3>Refresh</h3>
+            <p>Use consistently as part of your weekly routine for softer, healthier-looking hair.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONNECT -->
   <section class="social-section shadow3" id="contact">
-    <div class="height450">
-      <div class="section-title text-center">
+    <div class="container">
+      <div class="section-title text-center reveal">
         <span class="badge badge-info">Don’t Forget</span>
         <h2>Visit Our Socials</h2>
         <span class="section-title-line"></span>
-        <p>We’d Love to Connect With You</p>
+        <p>We’d love to connect with you.</p>
       </div>
-      <div class="social-overlap">
+
+      <div class="social-overlap reveal">
         <div class="social-bar">
           <div class="social-icons text-center">
-            <a href="https://facebook.com/noorishbloom"   target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://instagram.com/noorishbloom" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/noorishbloom"   target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://facebook.com/noorishbloom" target="_blank" aria-label="Noorish & Bloom Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://instagram.com/noorishbloom" target="_blank" aria-label="Noorish & Bloom Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/noorishbloom" target="_blank" aria-label="Noorish & Bloom Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -249,20 +377,27 @@
 
   <!-- FOOTER -->
   <footer class="section-padding">
-    <div class="container row">
+    <div class="container row footer-row">
       <div class="left-col">
-        <div class="logo">
-          <a href="#home"><span class="logo-circle"></span> Noorish &amp; Bloom</a>
+        <div class="logo footer-logo">
+          <a href="#home" class="nav-link">
+            <span class="logo-circle"></span>
+            Noorish &amp; Bloom
+          </a>
         </div>
+
         <p class="left-text">&copy; 2025 Noorish &amp; Bloom. All rights reserved.</p>
+        <p class="footer-note">Natural Botanical Hair Care • Cruelty Free • No Dyes &amp; Parabens • No Phthalates</p>
       </div>
+
       <div class="right-col">
-        <h1>Join Our Newsletter</h1>
+        <h2>Join Our Newsletter</h2>
         <div class="border"></div>
-        <p>Get exclusive offers &amp; haircare tips</p>
+        <p>Get exclusive offers and haircare tips.</p>
+
         <form class="newsletter-form">
-          <input type="email" class="txtb" placeholder="Enter your email" required/>
-          <input type="submit" value="Subscribe" class="btn1"/>
+          <input type="email" class="txtb" placeholder="Enter your email" required />
+          <input type="submit" value="Subscribe" class="btn1" />
         </form>
       </div>
     </div>

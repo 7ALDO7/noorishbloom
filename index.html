@@ -8,40 +8,37 @@
 
   <meta
     name="description"
-    content="Noorish & Bloom botanical shampoo, conditioner, and nourishing hair care products infused with rosemary, cinnamon, cloves, and anise."
+    content="Noorish & Bloom botanical shampoo, conditioner, and fortifying hair and scalp oil infused with plant-inspired ingredients."
   />
 
-  <!-- Font Awesome for icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
   />
 
-  <!-- Site CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 
 <body>
 
   <!-- NAVBAR -->
   <nav class="navbar">
-    <div class="container row justify-content-between align-items-center">
+    <div class="container nav-main row justify-content-between align-items-center">
       <div class="logo">
-        <a href="#home" class="nav-link">
+        <a href="#home" class="nav-link" aria-label="Noorish and Bloom home">
           <span class="logo-circle"></span>
-          Noorish &amp; Bloom
+          <span>Noorish &amp; Bloom</span>
         </a>
       </div>
 
-      <ul class="menu">
-        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#about" class="nav-link">Promise</a></li>
-        <li class="nav-item"><a href="#product" class="nav-link">Products</a></li>
-        <li class="nav-item"><a href="#ritual" class="nav-link">Ritual</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link">Connect</a></li>
+      <ul class="menu" id="menu">
+        <li class="nav-item"><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link" data-i18n="nav.promise">Promise</a></li>
+        <li class="nav-item"><a href="#product" class="nav-link" data-i18n="nav.products">Products</a></li>
+        <li class="nav-item"><a href="#ritual" class="nav-link" data-i18n="nav.ritual">Ritual</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link" data-i18n="nav.connect">Connect</a></li>
       </ul>
 
-      <!-- View Cart button in the nav -->
       <form
         target="_self"
         action="https://www.paypal.com/cgi-bin/webscr"
@@ -51,13 +48,61 @@
         <input type="hidden" name="business" value="aeaintegralservices@gmail.com">
         <input type="hidden" name="cmd" value="_cart">
         <input type="hidden" name="display" value="1">
-        <button type="submit" title="View Cart" aria-label="View PayPal cart">
+        <button
+          type="submit"
+          title="View PayPal cart"
+          aria-label="View PayPal cart"
+          data-i18n-title="cart.viewTitle"
+          data-i18n-aria="cart.viewTitle"
+        >
           <i class="fa-solid fa-cart-shopping"></i>
         </button>
       </form>
 
-      <div class="menu-btn" aria-label="Open navigation menu">
+      <button class="menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false">
         <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- LANGUAGE AND DATE BAR -->
+    <div class="language-date-bar">
+      <div class="container language-date-inner">
+        <div class="date-display" aria-live="polite">
+          <i class="fa-regular fa-calendar"></i>
+          <span id="siteDate">Wednesday, July 8, 2026</span>
+        </div>
+
+        <div class="language-picker">
+          <button
+            id="languageToggle"
+            class="language-toggle"
+            type="button"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+          >
+            <span id="currentLangFlag" aria-hidden="true">🇺🇸</span>
+            <span id="currentLangLabel">English</span>
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+
+          <div id="languageMenu" class="language-menu" role="listbox" aria-label="Language options">
+            <button type="button" class="language-option active" role="option" aria-selected="true" data-lang="en">
+              <span>🇺🇸</span> English
+            </button>
+
+            <button type="button" class="language-option" role="option" aria-selected="false" data-lang="es">
+              <span>🇲🇽</span> Español
+            </button>
+
+            <button type="button" class="language-option" role="option" aria-selected="false" data-lang="fr">
+              <span>🇫🇷</span> Français
+            </button>
+
+            <button type="button" class="language-option" role="option" aria-selected="false" data-lang="de">
+              <span>🇩🇪</span> Deutsch
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
@@ -69,24 +114,24 @@
 
     <div class="container row full-screen align-items-center">
       <div class="home-text reveal">
-        <p class="eyebrow">Natural Botanical Hair Care</p>
+        <p class="eyebrow" data-i18n="hero.eyebrow">Natural Botanical Hair Care</p>
 
-        <h1>Nourish your roots. Bloom through every strand.</h1>
+        <h1 data-i18n="hero.heading">Nourish your roots. Bloom through every strand.</h1>
 
-        <p>
-          Hydrating and strengthening hair care infused with rosemary, cinnamon,
-          cloves, and anise for a clean botanical routine from scalp to ends.
+        <p data-i18n="hero.copy">
+          Hydrating and strengthening botanical hair care crafted to cleanse,
+          soften, condition, and support healthy-looking hair from scalp to ends.
         </p>
 
         <div class="hero-buttons">
-          <a href="#product" class="btn1 nav-link">Shop Now</a>
-          <a href="#about" class="btn2 nav-link">Our Promise</a>
+          <a href="#product" class="btn1 nav-link" data-i18n="hero.shop">Shop Now</a>
+          <a href="#about" class="btn2 nav-link" data-i18n="hero.promise">Our Promise</a>
         </div>
 
         <div class="trust-row">
-          <span>Cruelty Free</span>
-          <span>No Dyes &amp; Parabens</span>
-          <span>No Phthalates</span>
+          <span data-i18n="trust.cruelty">Cruelty Free</span>
+          <span data-i18n="trust.noDyes">No Dyes &amp; Parabens</span>
+          <span data-i18n="trust.noPhthalates">No Phthalates</span>
         </div>
       </div>
 
@@ -103,20 +148,20 @@
     <div class="container values-grid">
       <article class="value-card reveal">
         <span>01</span>
-        <h2>Botanical Infusions</h2>
-        <p>Rosemary, cinnamon, cloves, and anise inspired blends for a refreshing hair-care ritual.</p>
+        <h2 data-i18n="values.oneTitle">Botanical Infusions</h2>
+        <p data-i18n="values.oneCopy">Rosemary, cinnamon, cloves, and anise inspired blends for a refreshing hair-care ritual.</p>
       </article>
 
       <article class="value-card reveal">
         <span>02</span>
-        <h2>Clean Beauty Feel</h2>
-        <p>Simple product values with no dyes, no parabens, no phthalates, and cruelty-free care.</p>
+        <h2 data-i18n="values.twoTitle">Clean Beauty Feel</h2>
+        <p data-i18n="values.twoCopy">Simple product values with no dyes, no parabens, no phthalates, and cruelty-free care.</p>
       </article>
 
       <article class="value-card reveal">
         <span>03</span>
-        <h2>Scalp-to-Strand Care</h2>
-        <p>A complete routine made to cleanse, condition, nourish, and support healthier-looking hair.</p>
+        <h2 data-i18n="values.threeTitle">Scalp-to-Strand Care</h2>
+        <p data-i18n="values.threeCopy">A complete routine made to cleanse, condition, nourish, and support healthier-looking hair.</p>
       </article>
     </div>
   </section>
@@ -132,28 +177,28 @@
 
       <div class="about-text reveal">
         <div class="section-title left-title">
-          <p class="eyebrow">Our Promise</p>
-          <h2>Good. Clean. Natural.</h2>
+          <p class="eyebrow" data-i18n="about.eyebrow">Our Promise</p>
+          <h2 data-i18n="about.heading">Good. Clean. Natural.</h2>
         </div>
 
-        <p>
-          At Noorish &amp; Bloom, clean haircare means simple, transparent ingredients that
-          are made to support a gentle, nourishing routine. We start with a coconut-derived
-          cleansing base enriched with aloe vera, argan oil, and bamboo extract, then infuse
-          each small batch with four powerhouse botanicals.
+        <p data-i18n="about.copy1">
+          At Noorish &amp; Bloom, clean haircare means simple, thoughtful ingredients
+          made to support a gentle, nourishing routine. We start with a coconut-derived
+          cleansing base enriched with aloe vera, argan oil, and bamboo extract, then
+          infuse each small batch with signature botanicals.
         </p>
 
         <ul class="promise-list">
-          <li><i class="fa-solid fa-leaf"></i> 100% Vegan &amp; Cruelty-Free</li>
-          <li><i class="fa-solid fa-ban"></i> Free from Sulfates, Parabens, Phthalates &amp; Dyes</li>
-          <li><i class="fa-solid fa-recycle"></i> Ethically &amp; Sustainably Sourced</li>
-          <li><i class="fa-solid fa-seedling"></i> Infused with Rosemary, Cinnamon, Cloves &amp; Anise</li>
+          <li><i class="fa-solid fa-leaf"></i> <span data-i18n="about.promise1">100% Vegan &amp; Cruelty-Free</span></li>
+          <li><i class="fa-solid fa-ban"></i> <span data-i18n="about.promise2">Free from Sulfates, Parabens, Phthalates &amp; Dyes</span></li>
+          <li><i class="fa-solid fa-recycle"></i> <span data-i18n="about.promise3">Ethically &amp; Sustainably Sourced</span></li>
+          <li><i class="fa-solid fa-seedling"></i> <span data-i18n="about.promise4">Infused with Rosemary, Cinnamon, Cloves &amp; Anise</span></li>
         </ul>
 
-        <p>No compromises. Just clean, hydrated, naturally nourished hair.</p>
+        <p data-i18n="about.copy2">No compromises. Just clean, hydrated, naturally nourished hair.</p>
 
         <div class="price">
-          <h3>Starting At</h3>
+          <h3 data-i18n="about.startingAt">Starting At</h3>
           <span class="old-price">$29.99</span>
           <span class="new-price">$19.99</span>
         </div>
@@ -165,17 +210,17 @@
   <section class="product-items section-padding" id="product">
     <div class="container">
       <div class="section-title text-center reveal">
-        <p class="eyebrow">The Collection</p>
-        <h2>Shop by Formula</h2>
-        <p class="section-intro">
+        <p class="eyebrow" data-i18n="products.eyebrow">The Collection</p>
+        <h2 data-i18n="products.heading">Shop by Formula</h2>
+        <p class="section-intro" data-i18n="products.intro">
           Start with a botanical cleanse, follow with conditioning softness,
-          or choose the nourishing duo bundle.
+          choose the duo, or complete your ritual with scalp nourishment.
         </p>
       </div>
 
       <div class="row product-row">
 
-        <!-- ITEM #1: Nourishing Shampoo -->
+        <!-- ITEM #1 -->
         <div class="product-item reveal">
           <div class="product-item-inner">
             <div class="card-img">
@@ -183,10 +228,10 @@
             </div>
 
             <div class="card-name">
-              <p>#1 Nourishing Shampoo</p>
+              <p data-i18n="products.shampooName">#1 Nourishing Shampoo</p>
             </div>
 
-            <p class="card-desc">
+            <p class="card-desc" data-i18n="products.shampooDesc">
               Infused with rosemary, cinnamon, cloves, and anise for a fresh botanical cleanse.
             </p>
 
@@ -221,7 +266,7 @@
           </div>
         </div>
 
-        <!-- ITEM #2: Nourishing Conditioner -->
+        <!-- ITEM #2 -->
         <div class="product-item reveal">
           <div class="product-item-inner featured-card">
             <div class="card-img">
@@ -229,10 +274,10 @@
             </div>
 
             <div class="card-name">
-              <p>#2 Nourishing Conditioner</p>
+              <p data-i18n="products.conditionerName">#2 Nourishing Conditioner</p>
             </div>
 
-            <p class="card-desc">
+            <p class="card-desc" data-i18n="products.conditionerDesc">
               Made to soften, smooth, and help hair feel more manageable after every wash.
             </p>
 
@@ -267,7 +312,7 @@
           </div>
         </div>
 
-        <!-- BUNDLE: Shampoo + Conditioner -->
+        <!-- ITEM #3 -->
         <div class="product-item reveal">
           <div class="product-item-inner">
             <div class="card-img">
@@ -275,10 +320,10 @@
             </div>
 
             <div class="card-name">
-              <p>#3 Nourishing Duo Bundle</p>
+              <p data-i18n="products.bundleName">#3 Nourishing Duo Bundle</p>
             </div>
 
-            <p class="card-desc">
+            <p class="card-desc" data-i18n="products.bundleDesc">
               The complete wash-day pair for cleansing, conditioning, softness, and shine.
             </p>
 
@@ -313,6 +358,54 @@
           </div>
         </div>
 
+        <!-- ITEM #4 -->
+        <div class="product-item reveal">
+          <div class="product-item-inner oil-product-card">
+            <div class="card-img oil-card-img">
+              <div class="oil-bottle" aria-hidden="true">
+                <div class="oil-drop-large"></div>
+              </div>
+            </div>
+
+            <div class="card-name">
+              <p data-i18n="products.oilName">#4 Fortifying Hair &amp; Scalp Oil</p>
+            </div>
+
+            <p class="card-desc" data-i18n="products.oilDesc">
+              A rich oil blend with castor, rosemary, oregano, and batana oils for scalp nourishment and shine.
+            </p>
+
+            <div class="card-prices">
+              <a href="#product" class="card-icon" aria-label="Favorite hair oil">
+                <i class="fa-solid fa-heart"></i>
+              </a>
+
+              <div>
+                <span class="card-price-before">$34.99</span>
+                <span class="card-price-now">$24.99</span>
+              </div>
+
+              <form
+                target="paypal"
+                action="https://www.paypal.com/cgi-bin/webscr"
+                method="post"
+                class="paypal-addtocart"
+              >
+                <input type="hidden" name="business" value="aeaintegralservices@gmail.com">
+                <input type="hidden" name="cmd" value="_cart">
+                <input type="hidden" name="add" value="1">
+                <input type="hidden" name="item_name" value="#4 Fortifying Hair and Scalp Oil">
+                <input type="hidden" name="amount" value="24.99">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="shopping_url" value="https://noorishbloom.com/#product">
+                <button type="submit" title="Add Fortifying Hair and Scalp Oil to cart" aria-label="Add Fortifying Hair and Scalp Oil to cart">
+                  <i class="fa-solid fa-cart-plus"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -321,28 +414,108 @@
   <section class="ritual-section section-padding" id="ritual">
     <div class="container">
       <div class="ritual-card reveal">
-        <p class="eyebrow">The Ritual</p>
-        <h2>Cleanse. Condition. Bloom.</h2>
+        <p class="eyebrow" data-i18n="ritual.eyebrow">The Ritual</p>
+        <h2 data-i18n="ritual.heading">Choose Your Product Ritual</h2>
 
-        <div class="ritual-grid">
-          <article>
-            <span>01</span>
-            <h3>Cleanse</h3>
-            <p>Apply shampoo to wet hair, gently massage the scalp, and rinse thoroughly.</p>
-          </article>
+        <p class="ritual-intro" data-i18n="ritual.intro">
+          Select a Noorish &amp; Bloom product below to see how it fits into your clean botanical routine.
+        </p>
 
-          <article>
-            <span>02</span>
-            <h3>Condition</h3>
-            <p>Apply conditioner from mid-lengths to ends, allow it to soften, then rinse.</p>
-          </article>
+        <div class="ritual-tabs" role="tablist" aria-label="Choose product ritual">
+          <button class="ritual-tab active" type="button" data-ritual="shampoo" data-i18n="ritual.tabShampoo">
+            Shampoo
+          </button>
 
-          <article>
-            <span>03</span>
-            <h3>Refresh</h3>
-            <p>Use consistently as part of your weekly routine for softer, healthier-looking hair.</p>
-          </article>
+          <button class="ritual-tab" type="button" data-ritual="conditioner" data-i18n="ritual.tabConditioner">
+            Conditioner
+          </button>
+
+          <button class="ritual-tab" type="button" data-ritual="oil" data-i18n="ritual.tabOil">
+            Hair &amp; Scalp Oil
+          </button>
         </div>
+
+        <div class="ritual-panel active" id="ritual-shampoo">
+          <div class="ritual-product-grid">
+            <div class="ritual-product-image">
+              <img src="assets/images/Shampoo.png" alt="Noorish & Bloom Nourishing Shampoo">
+            </div>
+
+            <div class="ritual-product-copy">
+              <span data-i18n="ritual.shampooStep">Step 01</span>
+              <h3 data-i18n="ritual.shampooTitle">Nourishing Shampoo</h3>
+
+              <p data-i18n="ritual.shampooCopy">
+                Begin with wet hair. Apply shampoo to the scalp and roots, gently massage into a lather,
+                then rinse thoroughly. Follow with Noorish &amp; Bloom conditioner for softness and manageability.
+              </p>
+
+              <ul>
+                <li data-i18n="ritual.shampooLi1">Gently cleanses the scalp and hair</li>
+                <li data-i18n="ritual.shampooLi2">Helps hair feel refreshed and lightweight</li>
+                <li data-i18n="ritual.shampooLi3">Infused with rosemary, cinnamon, cloves, and anise</li>
+              </ul>
+
+              <a href="#product" class="btn1 nav-link" data-i18n="ritual.shopShampoo">Shop Shampoo</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="ritual-panel" id="ritual-conditioner">
+          <div class="ritual-product-grid">
+            <div class="ritual-product-image">
+              <img src="assets/images/Conditioner.png" alt="Noorish & Bloom Nourishing Conditioner">
+            </div>
+
+            <div class="ritual-product-copy">
+              <span data-i18n="ritual.conditionerStep">Step 02</span>
+              <h3 data-i18n="ritual.conditionerTitle">Nourishing Conditioner</h3>
+
+              <p data-i18n="ritual.conditionerCopy">
+                After shampooing, apply conditioner from mid-lengths to ends. Let it soften the hair,
+                then rinse thoroughly for a smoother, more manageable finish.
+              </p>
+
+              <ul>
+                <li data-i18n="ritual.conditionerLi1">Helps soften and smooth strands</li>
+                <li data-i18n="ritual.conditionerLi2">Supports easier detangling</li>
+                <li data-i18n="ritual.conditionerLi3">Leaves hair feeling nourished and manageable</li>
+              </ul>
+
+              <a href="#product" class="btn1 nav-link" data-i18n="ritual.shopConditioner">Shop Conditioner</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="ritual-panel" id="ritual-oil">
+          <div class="ritual-product-grid">
+            <div class="ritual-product-image oil-visual">
+              <div class="oil-drop-large" aria-hidden="true"></div>
+            </div>
+
+            <div class="ritual-product-copy">
+              <span data-i18n="ritual.oilStep">Step 03</span>
+              <h3 data-i18n="ritual.oilTitle">Fortifying Hair &amp; Scalp Oil</h3>
+
+              <p data-i18n="ritual.oilCopy">
+                Apply a small amount directly to the scalp and massage gently for 3–5 minutes.
+                Use 2–3 times per week or as needed. For a pre-wash deep-care ritual, apply to the
+                scalp and hair, leave on for 30–60 minutes, then wash thoroughly. For dry ends,
+                smooth a small amount over the ends of the hair.
+              </p>
+
+              <ul>
+                <li data-i18n="ritual.oilLi1">Made with castor oil, rosemary oil, oregano oil, and batana oil</li>
+                <li data-i18n="ritual.oilLi2">Nourishes dry-feeling scalp and supports a softer feel</li>
+                <li data-i18n="ritual.oilLi3">Helps improve the appearance of shine, softness, and fuller-looking hair</li>
+                <li data-i18n="ritual.oilLi4">Perform a patch test before first use and avoid contact with eyes</li>
+              </ul>
+
+              <a href="#product" class="btn1 nav-link" data-i18n="ritual.shopOil">Shop Hair Oil</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -351,10 +524,10 @@
   <section class="social-section shadow3" id="contact">
     <div class="container">
       <div class="section-title text-center reveal">
-        <span class="badge badge-info">Don’t Forget</span>
-        <h2>Visit Our Socials</h2>
+        <span class="badge badge-info" data-i18n="social.badge">Don’t Forget</span>
+        <h2 data-i18n="social.heading">Visit Our Socials</h2>
         <span class="section-title-line"></span>
-        <p>We’d love to connect with you.</p>
+        <p data-i18n="social.copy">We’d love to connect with you.</p>
       </div>
 
       <div class="social-overlap reveal">
@@ -382,27 +555,40 @@
         <div class="logo footer-logo">
           <a href="#home" class="nav-link">
             <span class="logo-circle"></span>
-            Noorish &amp; Bloom
+            <span>Noorish &amp; Bloom</span>
           </a>
         </div>
 
-        <p class="left-text">&copy; 2025 Noorish &amp; Bloom. All rights reserved.</p>
-        <p class="footer-note">Natural Botanical Hair Care • Cruelty Free • No Dyes &amp; Parabens • No Phthalates</p>
+        <p class="left-text" data-i18n="footer.copyright">&copy; 2025 Noorish &amp; Bloom. All rights reserved.</p>
+        <p class="footer-note" data-i18n="footer.note">
+          Natural Botanical Hair Care • Cruelty Free • No Dyes &amp; Parabens • No Phthalates
+        </p>
       </div>
 
       <div class="right-col">
-        <h2>Join Our Newsletter</h2>
+        <h2 data-i18n="footer.newsletter">Join Our Newsletter</h2>
         <div class="border"></div>
-        <p>Get exclusive offers and haircare tips.</p>
+        <p data-i18n="footer.newsletterCopy">Get exclusive offers and haircare tips.</p>
 
         <form class="newsletter-form">
-          <input type="email" class="txtb" placeholder="Enter your email" required />
-          <input type="submit" value="Subscribe" class="btn1" />
+          <input
+            type="email"
+            class="txtb"
+            placeholder="Enter your email"
+            required
+            data-i18n-placeholder="footer.emailPlaceholder"
+          />
+          <input
+            type="submit"
+            value="Subscribe"
+            class="btn1"
+            data-i18n-value="footer.subscribe"
+          />
         </form>
       </div>
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="main.js?v=5"></script>
 </body>
 </html>
